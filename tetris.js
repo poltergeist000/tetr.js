@@ -193,6 +193,7 @@ var settings = {
   Ghost: 0,
   Grid: 0,
   Outline: 0,
+  Lightmode: 0,
 };
 
 var setting = {
@@ -220,6 +221,7 @@ var setting = {
   Ghost: ['Normal', 'Colored', 'Off'],
   Grid: ['Off', 'On'],
   Outline: ['Off', 'On'],
+  Lightmode: ['Off', 'On']
 };
 
 var frame;
@@ -342,6 +344,11 @@ function resize() {
 
   // Redraw graphics
   makeSprite();
+
+  if (settings.Lightmode === 1) {
+
+    document.getElementById("content").style.backgroundColor = "#fffff";
+  }
 
   if (settings.Grid === 1) bg(bgStackCtx);
 
